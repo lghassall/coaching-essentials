@@ -1,0 +1,512 @@
+/* Custom styles for Coaching Essentials */
+/* Leah Hassall, Corporate Learning Branch, November 2025 */
+/* Based on Bootstrap 4 and Font Awesome */
+
+body {
+  font-size: 1.12rem;
+  font-family: 'BC Sans', sans-serif;
+  font-weight: 300;
+  /* Palette */
+  --primary-blue: #234075;
+  --primary-yellow: #e3a82b;
+  --secondary-orange: #E87722;
+  --secondary-green: #007864;
+  --secondary-red: #971B2F;
+  --secondary-blue: #4698cb;
+  --secondary-brown: #866D48;
+  --secondary-purple: #5F2167;
+  --secondary-bluegreen: #2F6173;
+}
+
+.border-blueRounded {
+  border-width: 2px;
+  border-color: var(--primary-blue);
+  border-style: solid;
+  border-radius: 1.25rem !important;
+}
+
+/* Sidebar Table of Contents */
+.sidebar {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+
+.sidebar .nav-link {
+  color: #004785;
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.sidebar h5 {
+  font-weight: 600;
+  color: #333;
+}
+
+
+/* headings */
+h2 {
+  color: var(--primary-blue);
+  font-weight: 500;
+  margin-top: 1.75rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+h4 {
+  color: var(--primary-blue);
+  font-weight: 500;
+  margin-top: 1.75rem;
+  font-size: 1.2rem;
+}
+
+h5 {
+  color: var(--primary-blue);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/* buttons */
+.bg-blue {
+  background-color: var(--primary-blue);
+}
+
+a.btn {
+  text-decoration: none !important;
+}
+
+.btn {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.btn:hover,
+.btn:focus .btn:active {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+/* LINKS */
+a {
+  color: #1a5a96;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: #2378c7
+}
+
+/* Add icon to external link, code from https://christianoliff.com/blog/styling-external-links-with-an-icon-in-css/
+CSS generated content should be ignored by screen readers - see https://developer.mozilla.org/en-US/docs/Web/CSS/content#accessibility */
+
+a[target="_blank"]:not(a[href$=".pdf"], a[href$=".doc"], a[href$=".docx"])::after {
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 0.2em;
+  padding-right: 0.75em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23234075' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+}
+
+a[target="_blank"]:not([href$=".pdf"], [href$=".doc"], [href$=".docx"]).text-white::after {
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 0.2em;
+  padding-right: 0.75em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+}
+
+a[href$=".pdf"]:after {
+  content: "\00a0(PDF)";
+}
+
+a[href$=".doc"]:after,
+a[href$=".docx"]:after {
+  content: "\00a0(DOC)";
+}
+
+.alert-primary a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Accordion */
+.collapsible-link {
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+
+.collapsible-link::before {
+  content: '\f107';
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  display: block;
+  font-family: 'FontAwesome';
+  font-size: 1.1rem;
+}
+
+.accordion-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  position: relative;
+}
+
+.accordion-toggle::after {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.25s ease;
+}
+
+.accordion-toggle[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-toggle:hover,
+.accordion-toggle:focus {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Styling for left-hand pill tab group with arrows */
+.nav-tabs,
+.nav-pills {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: unset;
+}
+
+.nav-tabs .nav-link {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: var(--primary-blue);
+  border-radius: .25rem .25rem 0 0;
+  border: none;
+  margin-right: .18rem;
+  padding: 0.68rem 1.18rem;
+  box-shadow: inset 0.18rem 0 0 0 var(--primary-blue), inset -0.18rem 0 0 0 var(--primary-blue), inset 0 0.18rem 0 0 var(--primary-blue), inset 0 -0.18rem 0 0 transparent;
+  --max-lines: 2.5;
+  position: relative;
+  max-height: calc(var(--lh) * var(--max-lines));
+  overflow: unset;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-tabs .nav-link.active {
+
+  background-color: #ffffff !important;
+  color: var(--prob-blue-green) !important;
+  margin-bottom: -2px;
+  padding-bottom: 0.82rem;
+  box-shadow: inset 0.18rem 0 0 0 var(--primary-blue), inset -0.18rem 0 0 0 var(--primary-blue), inset 0 0.18rem 0 0 var(--primary-blue), inset 0 -0.18rem 0 0 #ffffff;
+}
+
+.nav-pills .nav-link {
+  background-color: #ffffff;
+  color: var(--primary-blue);
+  font-weight: bold;
+  border-radius: .25rem;
+  border: solid var(--primary-blue) 2px !important;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+#jumplist .nav-link {
+  font-size: 1rem;
+  line-height: 1;
+  padding: .5rem;
+  font-weight: 600;
+}
+
+#jumplist .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Add indicator arrow for the active tab above md breakpoint */
+@media (min-width: 768px) {
+  .nav-pills .nav-link::before {
+    content: '';
+    display: block;
+    border-top: 8px solid transparent;
+    border-left: 10px solid var(--primary-blue);
+    border-bottom: 8px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+.nav-pills .nav-link.active {
+  color: #ffffff !important;
+  background-color: var(--primary-blue) !important;
+}
+
+.nav-pills .nav-link.active::before {
+  opacity: 1;
+}
+
+#content .nav-pills li.nav-item+li.nav-item {
+  margin-top: .5rem;
+}
+
+.nav-pills.tab-content {
+  border-radius: 0.5rem;
+  padding: 1rem 1rem 0 1rem;
+  background-color: #ffffff;
+  border: var(--primary-blue) 2px solid;
+  height: 100%;
+}
+
+#content li.nav-item+li.nav-item {
+  margin-top: .5rem;
+}
+
+.li:not(:last-of-type) {
+  margin-bottom: 0.25rem;
+}
+
+/* card */
+.card {
+  border-radius: 0.7rem 11.2px;
+}
+
+/* activity card */
+.activity .card-header {
+  background-color: var(--primary-blue);
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  padding-left: 2.8rem;
+  padding-right: 0.5rem;
+}
+
+.activity .card-header::before {
+  position: absolute;
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/activity.svg);
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: none;
+}
+
+.activity {
+  border-color: var(--primary-blue);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+}
+
+/* knowledge check card  */
+.knowledge .card-header {
+  background-color: var(--primary-blue);
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  padding-left: 2.8rem;
+  padding-right: 0.5rem;
+}
+
+.knowledge .card-header::before {
+  position: absolute;
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/knowledge-check.svg);
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: none;
+}
+
+.knowledge {
+  border-color: var(--primary-blue);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+}
+
+/* CoachQuest card  */
+.coachquest .card-header {
+  background-color: var(--primary-blue);
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  padding-left: 2.8rem;
+  padding-right: 0.5rem;
+}
+
+.coachquest .card-header::before {
+  position: absolute;
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/quest.svg);
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: none;
+}
+
+.coachquest {
+  border-color: var(--primary-blue);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+}
+
+/* IRBC Highlight Card  */
+.irbc .card-header {
+  background-color: var(--primary-blue);
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  padding-left: 2.8rem;
+  padding-right: 0.5rem;
+}
+
+.irbc .card-header::before {
+  position: absolute;
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/leaf.svg);
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: none;
+}
+
+.irbc {
+  border-color: var(--primary-blue);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+}
+
+/* Reflection Card  */
+.reflection .card-header {
+  background-color: var(--secondary-bluegreen);
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  padding-left: 2.8rem;
+  padding-right: 0.5rem;
+}
+
+.reflection .card-header::before {
+  position: absolute;
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/leaf.svg);
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: none;
+}
+
+.reflection {
+  border-color: var(--secondary-bluegreen);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+}
+
+.video-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  outline: none;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+/* scroll to top button */
+html {
+  scroll-behavior: smooth;
+}
+
+.to-top {
+  background: rgb(61, 61, 61);
+  position: fixed;
+  bottom: 16px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+  z-index: 9999;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.to-top:hover,
+.to-top:focus,
+.to-top:active {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* Footer */
+#footer-wrapper {
+  margin-top: 2em;
+  padding: 2em 0;
+  /* background-image: url(images/overlay.png), url(images/footer.svg); */
+  background-size: 128px 128px, 100% 100%;
+}
+
+.footerImage img {
+  max-width: 40%;
+  margin: 0 auto;
+  min-width: 200px;
+}
+
+/* Copyright */
+#copyright {
+  z-index: 1;
+  text-align: center;
+  color: #284274;
+  padding-top: 2em;
+  margin-top: 4em;
+}

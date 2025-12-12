@@ -55,9 +55,11 @@ h2 {
   color: var(--primary-blue);
   font-weight: 500;
   margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 h3 {
+  color: var(--primary-blue);
   margin-top: 1.5rem;
   font-size: 1.5rem;
 }
@@ -331,6 +333,32 @@ a[href$=".docx"]:after {
   border-width: 2px;
 }
 
+/* actionable insight card */
+.insight .card-header {
+  background-color: #2F6173;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  padding-left: 2.8rem;
+  padding-right: 0.5rem;
+}
+
+.insight .card-header::before {
+  position: absolute;
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/activity.svg);
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: none;
+}
+
+.insight {
+  border-color: #2F6173;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+}
+
 /* knowledge check card  */
 .knowledge .card-header {
   background-color: var(--primary-blue);
@@ -411,7 +439,7 @@ a[href$=".docx"]:after {
 
 /* Reflection Card  */
 .reflection .card-header {
-  background-color: var(--secondary-bluegreen);
+  background-color: #704214;
   color: rgb(255, 255, 255);
   margin-top: 0;
   padding-left: 2.8rem;
@@ -420,7 +448,7 @@ a[href$=".docx"]:after {
 
 .reflection .card-header::before {
   position: absolute;
-  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/leaf.svg);
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/reflection.svg);
   top: 0.5rem;
   left: 0.5rem;
   height: 2rem;
@@ -429,7 +457,7 @@ a[href$=".docx"]:after {
 }
 
 .reflection {
-  border-color: var(--secondary-bluegreen);
+  border-color: #704214;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
   border-width: 2px;
@@ -509,4 +537,141 @@ html {
   color: #284274;
   padding-top: 2em;
   margin-top: 4em;
+}
+
+/* Tooltip customization */
+[data-toggle="tooltip"] {
+  white-space: nowrap;
+  display: inline-block;
+  cursor: help;
+  border-bottom: 1px dotted #000;
+}
+
+.tooltip-inner {
+  max-width: 200px !important;
+  font-size: 16px !important;
+  text-align: left;
+}
+
+.tooltip {
+  white-space: normal !important;
+}
+
+/* Flashcard styles */
+.flashcard-container {
+  width: 460px;
+  text-align: center;
+  perspective: 1000px;
+}
+
+.flashcard-container .nav-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.flip-card {
+  width: 100%;
+  height: 360px;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  color: #555;
+  border-top: 4px solid #ff6f2c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: #fffefe !important;
+}
+
+.refresh-icon {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  cursor: pointer;
+  color: #555;
+  font-size: 20px;
+  z-index: 10;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.flashcard-container .refresh-icon {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+.flashcard-container .flip-card.flipped+.refresh-icon,
+.flashcard-container .flip-card.flipped~.refresh-icon {
+  transform: rotate(180deg);
+}
+
+.nav-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-prev {
+  background: #ffd9c8;
+  color: #ff6f2c;
+}
+
+.btn-next {
+  background: #ff6f2c;
+  color: white;
+}
+
+.progress-line {
+  width: 120px;
+  height: 3px;
+  background: #ddd;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ff6f2c;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.deactivated {
+  pointer-events: none;
+  /* Prevent clicks */
+  opacity: 0.5;
+  /* Make it look disabled */
 }

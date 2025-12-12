@@ -23,7 +23,7 @@
                 <li class="nav-item dropdown nav-item active">
                     <a class="nav-link dropdown-toggle" href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/home.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Content </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Module 1</a>
+                        <a class="dropdown-item" href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/m1p1-introduction.html">Module 1</a>
                         <a class="dropdown-item" href="#">Module 2</a>
                         <a class="dropdown-item" href="#">Module 3</a>
                         <a class="dropdown-item" href="#">Module 4</a>
@@ -37,34 +37,38 @@
             </ul>
         </div>
     </nav>
-    <!-- HERO SECTION -->
+    <!-- HERO IMAGE -->
     <header class="p-5 bg-image object-fit-fill" style="background-image: url('https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/header.svg');
-            height: 500px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            position: relative;">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;">
-            <div class="d-flex flex-column justify-content-center align-items-center h-100 text-white text-center">
-                <h1 class="p-4">Coaching Essentials</h1>
-                <p class="text-white w-75" style="font-size: 1.3rem; font-weight: 300; letter-spacing: 0.5px; line-height: 1.6; opacity: 0.9;"> Use coaching skills in everyday conversations to work alongside others, supporting them to thrive and reach their fullest potential. </p>
-                <a href="#section-1" class="btn btn-outline-light btn-lg mt-3 text-decoration-none" style="border-color: white; color: white;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"> GET STARTED </a>
-            </div>
+           height: 600px;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+           position: relative;">
+        <div class="position-absolute w-100 h-100" style="top: 0; left: 0;
+               background: rgba(0, 0, 0, 0.3);
+               z-index: 1;">
+        </div>
+        <div class="position-absolute w-100 d-flex flex-column justify-content-center align-items-center text-white text-center" style="
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem 0;
+            z-index: 2;">
+            <h1 class="mb-3">Coaching Essentials</h1>
+            <p class="w-75" style="font-size: 1.3rem; font-weight: 300; letter-spacing: 0.5px; line-height: 1.6; opacity: 0.9;"> Use coaching skills in everyday conversations to work alongside others, supporting them to thrive and reach their fullest potential. </p>
+            <a href="#section-1" class="btn btn-outline-light btn-lg mt-3 text-decoration-none" style="border-color: white; color: white;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"> GET STARTED </a>
+        </div>
     </header>
     <main role="main">
         <!-- ABOUT THE COURSE -->
         <div class="container-fluid">
-            <div class="p-3 border border-light bg-light mt-4 p-4 rounded mx-auto shadow-lg w-75">
-                <h2 class="pb-2 mt-0">About the Course</h2>
+            <div class="p-3 border border-medium bg-light mt-4 p-4 rounded mx-auto shadow-lg w-75">
+                <h2 id="section-1" class="pb-2 mt-0">About the Course</h2>
                 <p class="mb-1"><i class="fa fa-duotone fa-clock mr-1 text-black" aria-hidden="true"></i><strong>Learning time:</strong>
                 <ul>
-                    <li><strong>Part 1</strong>: eLearning | 6 modules | self-paced | 60 min</li>
-                    <li><strong>Part 2</strong>: virtual practice| facilitated | 3-hours</li>
+                    <li><strong>Part 1</strong>: eLearning | self-paced | 60 min</li>
+                    <li><strong>Part 2</strong>: skills lab | facilitated online | 3-hours</li>
                 </ul>
                 </p>
                 <p class="mb-1"><i class="fa fa-user mr-1"></i><strong> Audience:</strong> Current and aspiring people leaders.</p>
@@ -72,10 +76,10 @@
                     <a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-coaching/" target="_blank">Intro to Coaching</a>
                     </a> (IDIR restricted) | 60 min
                 <div class="alert alert-primary" role="alert">
-                    <p class="mb-0"><i class="fas fa-exclamation-triangle fa-lg"></i> If you're not part of Core B.C. Provincial Government, please enroll in courses through your learning management system. </p>
+                    <p class="mb-0"><i class="fas fa-exclamation-triangle fa-lg"></i> If you're not part of Core B.C. Provincial Government, enroll through your learning management system. </p>
                 </div>
                 </p>
-                <p class="mb-0"><i class="fa fa-check-square mr-1 text-black" aria-hidden="true"></i><strong>Completion:</strong> You must complete the eLearning and skills lab to be marked complete in the course. Please complete all six modules before attending the skills lab so you feel confident and prepared.</p>
+                <p class="mb-0"><i class="fa fa-check-square mr-1 text-black" aria-hidden="true"></i><strong>Completion:</strong> You must complete the eLearning and skills lab to be marked complete in the course. Please complete all six modules of the eLearning before attending the skills lab so you feel confident and prepared.</p>
             </div>
             <div class="row mt-4 w-75 mx-auto">
                 <!-- MODULE 1 -->
@@ -85,7 +89,7 @@
                         <div class="card-body d-flex flex-column align-items-center justify-content-between">
                             <h5 class="card-title font-weight-bold">Module 1: Introduction </h5>
                             <p>10 min</p>
-                            <p class="card-text">Discover why coaching is so powerful. </p>
+                            <p class="card-text">Discover why coaching is so powerful</p>
                             <a href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/m1p1-introduction.html" class="stretched-link btn rounded bg-blue text-white mt-auto">Start lesson</a>
                         </div>
                     </div>
@@ -96,9 +100,9 @@
                         <img class="card-img-top p-3" src="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/nav_m2.jpg" style="max-height: 30vh;" alt="">
                         <div class="card-body d-flex flex-column align-items-center justify-content-between">
                             <h5 class="card-title font-weight-bold">Module 2: Coaching Skill | Presence and Active Listening</h5>
-                            <p>10 min</p>
-                            <p class="card-text">Create connection and a space where others feel understood and valued. </p>
-                            <a href="#" class="stretched-link btn rounded bg-blue text-white mt-auto">Start lesson</a>
+                            <p>15 min</p>
+                            <p class="card-text">Create connection and a space where others feel understood and valued</p>
+                            <a href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/m2p1-introduction.html" class="stretched-link btn rounded bg-blue text-white mt-auto">Start lesson</a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +113,7 @@
                         <div class="card-body d-flex flex-column align-items-center justify-content-between">
                             <h5 class="card-title font-weight-bold">Module 3: Coaching Skill | Powerful Questions</h5>
                             <p>10 min</p>
-                            <p class="card-text">Ask questions that lead to discovery and possibility. </p>
+                            <p class="card-text">Ask questions that lead to discovery and possibility</p>
                             <a href="#" class="stretched-link btn rounded bg-blue text-white mt-auto">Start lesson</a>
                         </div>
                     </div>
@@ -120,8 +124,8 @@
                         <img class="card-img-top p-3" src="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/nav_m4.jpg" style="max-height: 30vh;" alt="">
                         <div class="card-body d-flex flex-column align-items-center justify-content-between">
                             <h5 class="card-title font-weight-bold">Module 4: Coaching Skill | Feedback and Acknowledgements</h5>
-                            <p>5 min</p>
-                            <p class="card-text">Empower growth through meaningful feedback and authentic acknowledgment. </p>
+                            <p>10 min</p>
+                            <p class="card-text">Empower growth through meaningful feedback and authentic acknowledgment</p>
                             <a href="#" class="stretched-link btn rounded bg-blue text-white mt-auto">Start lesson</a>
                         </div>
                     </div>
@@ -131,9 +135,9 @@
                     <div class="card h-100 border-blueRounded text-center">
                         <img class="card-img-top p-3" src="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/nav_m5.jpg" style="max-height: 30vh;" alt="">
                         <div class="card-body d-flex flex-column align-items-center justify-content-between">
-                            <h5 class="card-title font-weight-bold">Module 5: GROW Model </h5>
-                            <p>5 min</p>
-                            <p class="card-text">Explore a simple model for coaching others. </p>
+                            <h5 class="card-title font-weight-bold">Module 5: GROW Model</h5>
+                            <p>10 min</p>
+                            <p class="card-text">Explore a simple model for coaching others</p>
                             <a href="#" class="stretched-link btn rounded bg-blue text-white mt-auto">Start lesson</a>
                         </div>
                     </div>
@@ -143,9 +147,9 @@
                     <div class="card h-100 border-blueRounded text-center">
                         <img class="card-img-top p-3" src="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/nav_m6.jpg" style="max-height: 30vh;" alt="">
                         <div class="card-body d-flex flex-column align-items-center justify-content-between">
-                            <h5 class="card-title font-weight-bold">Module 6: Next Steps </h5>
+                            <h5 class="card-title font-weight-bold">Module 6: Next Steps</h5>
                             <p>5 min</p>
-                            <p class="card-text">Preparing for the skills lab. </p>
+                            <p class="card-text">Preparing for the skills lab</p>
                             <a href="#" class="stretched-link btn rounded bg-blue text-white mt-auto">Start lesson</a>
                         </div>
                     </div>
@@ -153,7 +157,7 @@
             </div>
             <!-- ACCESSIBILITY STATEMENT -->
             <div class="container pb-4">
-                <div class=" mt-4 mb-5 pr-4 border border-light bg-light rounded w-75 mx-auto shadow-lg">
+                <div class=" mt-4 mb-5 pr-4 border border-medium bg-light rounded w-75 mx-auto shadow-lg">
                     <h3 style="text-align: center;">Accessibility Statement</h3>
                     <div style="margin-left: 30px; text-align: left;">
                         <p>The Corporate Learning Branch is committed to ensuring digital accessibility for people of all abilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards. </p>
@@ -165,7 +169,7 @@
                 <footer class="text-center mt-5 py-4 border-top">
                     <div class="container">
                         <img src="img/where_ideas_work.png" alt="BC Government logo" class="img-fluid mb-3" style="max-height: 60px;">
-                        <p class="mb-0 text-muted"> © 2025 BC Provincial Government | Corporate Learning Branch </p>
+                        <p class="mb-0 text-muted"> © 2025 BC Provincial Government | Corporate Learning Branch</p>
                     </div>
                 </footer>
                 <!-- SCROLL-TO-TOP BUTTON -->
@@ -188,13 +192,21 @@
                 toTop.classList.remove("active");
             }
         })</script>
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelector('a[href="#section-1"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector('#section-1');
+            window.scrollTo({
+                top: target.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    </script>
     <!-- Scroll Button -->
     <script>// Get the button
         let mybutton = document.getElementById("myBtn");
-
-        // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () { scrollFunction() };
-
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";

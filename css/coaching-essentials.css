@@ -16,6 +16,8 @@ body {
   --secondary-brown: #866D48;
   --secondary-purple: #5F2167;
   --secondary-bluegreen: #2F6173;
+  --secondary-eucalyptus: #496e69;
+  --secondary-coral: #d65842;
 }
 
 .border-blueRounded {
@@ -335,7 +337,7 @@ a[href$=".docx"]:after {
 
 /* actionable insight card */
 .insight .card-header {
-  background-color: #2F6173;
+  background-color: var(--secondary-eucalyptus);
   color: rgb(255, 255, 255);
   margin-top: 0;
   padding-left: 2.8rem;
@@ -353,7 +355,7 @@ a[href$=".docx"]:after {
 }
 
 .insight {
-  border-color: #2F6173;
+  border-color: var(--secondary-eucalyptus);
   margin-bottom: 1rem;
   margin-top: 1.5rem;
   border-width: 2px;
@@ -437,9 +439,35 @@ a[href$=".docx"]:after {
   border-width: 2px;
 }
 
+/* Connection Card  */
+.connection .card-header {
+  background-color: var(--primary-blue);
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  padding-left: 2.8rem;
+  padding-right: 0.5rem;
+}
+
+.connection .card-header::before {
+  position: absolute;
+  content: url(https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/img/connections.svg);
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: none;
+}
+
+.connection {
+  border-color: var(--primary-blue);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-width: 2px;
+}
+
 /* Reflection Card  */
 .reflection .card-header {
-  background-color: #704214;
+  background-color: var(--secondary-bluegreen);
   color: rgb(255, 255, 255);
   margin-top: 0;
   padding-left: 2.8rem;
@@ -457,7 +485,7 @@ a[href$=".docx"]:after {
 }
 
 .reflection {
-  border-color: #704214;
+  border-color: var(--secondary-bluegreen);
   margin-bottom: 1rem;
   margin-top: 1.5rem;
   border-width: 2px;
@@ -476,67 +504,6 @@ a[href$=".docx"]:after {
   outline: none;
   aspect-ratio: 16/9;
   object-fit: contain;
-}
-
-/* scroll to top button */
-html {
-  scroll-behavior: smooth;
-}
-
-.to-top {
-  background: rgb(61, 61, 61);
-  position: fixed;
-  bottom: 16px;
-  right: 25px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #ffffff;
-  text-decoration: none;
-  opacity: 0;
-  pointer-events: none;
-  transition: all .4s;
-  z-index: 9999;
-}
-
-.to-top.active {
-  bottom: 32px;
-  pointer-events: auto;
-  opacity: 1;
-}
-
-.to-top:hover,
-.to-top:focus,
-.to-top:active {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-
-/* Footer */
-#footer-wrapper {
-  margin-top: 2em;
-  padding: 2em 0;
-  /* background-image: url(images/overlay.png), url(images/footer.svg); */
-  background-size: 128px 128px, 100% 100%;
-}
-
-.footerImage img {
-  max-width: 40%;
-  margin: 0 auto;
-  min-width: 200px;
-}
-
-/* Copyright */
-#copyright {
-  z-index: 1;
-  text-align: center;
-  color: #284274;
-  padding-top: 2em;
-  margin-top: 4em;
 }
 
 /* Tooltip customization */
@@ -594,7 +561,7 @@ html {
   align-items: center;
   font-size: 26px;
   color: #555;
-  border-top: 4px solid #ff6f2c;
+  border-top: 4px solid var(--secondary-eucalyptus);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -638,11 +605,11 @@ html {
 
 .btn-prev {
   background: #ffd9c8;
-  color: #ff6f2c;
+  color: var(--secondary-eucalyptus);
 }
 
 .btn-next {
-  background: #ff6f2c;
+  background: var(--secondary-eucalyptus);
   color: white;
 }
 
@@ -657,7 +624,7 @@ html {
 
 .progress-fill {
   height: 100%;
-  background: #ff6f2c;
+  background: var(--secondary-eucalyptus);
   width: 0%;
   border-radius: 10px;
   transition: width 0.3s;
@@ -671,7 +638,127 @@ html {
 
 .deactivated {
   pointer-events: none;
-  /* Prevent clicks */
   opacity: 0.5;
-  /* Make it look disabled */
+}
+
+/* scroll to top button */
+html {
+  scroll-behavior: smooth;
+}
+
+.to-top {
+  background: rgb(61, 61, 61);
+  position: fixed;
+  bottom: 16px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+  z-index: 9999;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.to-top:hover,
+.to-top:focus,
+.to-top:active {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* Footer */
+#footer-wrapper {
+  margin-top: 2em;
+  padding: 2em 0;
+  background-size: 128px 128px, 100% 100%;
+}
+
+.footerImage img {
+  max-width: 40%;
+  margin: 0 auto;
+  min-width: 200px;
+}
+
+/* Copyright */
+#copyright {
+  z-index: 1;
+  text-align: center;
+  color: #284274;
+  padding-top: 2em;
+  margin-top: 4em;
+}
+
+/* Responsive modal dialog */
+.modal-dialog-responsive {
+  max-width: 100vw;
+  margin: 1.5rem auto;
+}
+
+/* Modal content styling */
+.modal-content {
+  background: transparent;
+  border: none;
+  padding: 0;
+  max-height: 95vh;
+  overflow: hidden;
+}
+
+/* Image container relative for button overlay */
+.modal-image-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Modal image */
+.modal-image {
+  max-width: 100%;
+  max-height: 95vh;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Close button overlay on image */
+.modal-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 48px;
+  height: 48px;
+  font-size: 2.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.65);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Hover and focus */
+.modal-close-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.modal-close-btn:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
 }

@@ -3,7 +3,7 @@
 /* Based on Bootstrap 4 and Font Awesome */
 
 body {
-  font-size: 1.12rem;
+  font-size: 1.3rem;
   font-family: 'BC Sans', sans-serif;
   font-weight: 300;
   /* Palette */
@@ -750,7 +750,7 @@ html {
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 /* Hover and focus */
@@ -761,4 +761,105 @@ html {
 .modal-close-btn:focus {
   outline: 3px solid #fff;
   outline-offset: 2px;
+}
+
+/* Readiness Checklist */
+.form-check-input {
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: 0.3em;
+  cursor: pointer;
+  border: 2px solid var(--primary-blue);
+  /* Blue border */
+  border-radius: 4px;
+  appearance: none;
+  /* Remove default browser styling */
+  -webkit-appearance: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-check-label {
+  margin-left: 1.2em;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-blue);
+
+  border-color: var(--primary-blue);
+}
+
+.form-check-input:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 1em;
+  position: relative;
+  left: 0.25em;
+  top: -0.05em;
+}
+
+.form-check-input:hover {
+  border-color: var(--primary-blue);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+/* CSS talk bubble */
+.talk-bubble {
+  display: inline-block;
+  position: relative;
+  height: auto;
+  border-radius: 30px;
+  /* round corners */
+  padding: 1rem;
+  color: #000;
+}
+
+/* Text inside bubble */
+.talktext {
+  padding: 1em;
+  text-align: left;
+}
+
+.talk-bubble.right {
+  background-color: #e2b148;
+}
+
+/* Left-pointing arrow */
+.talk-bubble.right:after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 27px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #e2b148;
+
+}
+
+.talk-bubble.left {
+  background-color: var(--secondary-eucalyptus);
+}
+
+.talk-bubble.left:after {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 27px;  
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid var(--secondary-eucalyptus);
+}
+
+summary h5 {
+  margin: 0;
+  display: inline;
 }

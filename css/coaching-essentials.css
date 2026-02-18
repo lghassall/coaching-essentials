@@ -170,7 +170,7 @@ a[href$=".docx"]:after {
 .accordion-toggle {
   background: none;
   border: none;
-  padding: 0;
+  padding-right: 3rem;
   width: 100%;
   text-align: left;
   cursor: pointer;
@@ -184,7 +184,7 @@ a[href$=".docx"]:after {
   font-family: "Font Awesome 5 Free";
   font-weight: 700;
   position: absolute;
-  right: 0;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%) rotate(0deg);
   transition: transform 0.25s ease;
@@ -525,120 +525,126 @@ a[href$=".docx"]:after {
 }
 
 /* Flashcard styles */
-.flashcard-container {
-  width: 460px;
-  text-align: center;
-  perspective: 1000px;
+.flashcard {
+  display: none;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #f4f7fb);
+  transition: all 0.4s ease;
+  transform: translateY(25px);
+  opacity: 0;
+
 }
 
-.flashcard-container .nav-btn:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.flip-card {
-  width: 100%;
-  height: 360px;
-  position: relative;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-}
-
-.flip-card.flipped {
-  transform: rotateY(180deg);
-}
-
-.card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background: white;
-  border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 26px;
-  color: #555;
-  border-top: 4px solid var(--secondary-eucalyptus);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card-back {
-  transform: rotateY(180deg);
-  background: #fffefe !important;
-}
-
-.refresh-icon {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  cursor: pointer;
-  color: #555;
-  font-size: 20px;
+/* Active card */
+.flashcard.active {
+  display: block !important;
+  animation: fadeSlideIn 0.4s ease forwards;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
   z-index: 10;
-  text-decoration: none !important;
-  border-bottom: none !important;
 }
 
-.flashcard-container .refresh-icon {
-  display: inline-block;
-  transition: transform 0.6s ease;
+/* Entrance animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.flashcard-container .flip-card.flipped+.refresh-icon,
-.flashcard-container .flip-card.flipped~.refresh-icon {
-  transform: rotate(180deg);
+.flashcard .card-body {
+  padding: 2rem;
+}
+
+.flashcard .card-title {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.flashcard .card-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.flashcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.flashcard:focus {
+  outline: 3px solid #89a6d8;
+  outline-offset: 4px;
+}
+
+.flashcard-nav {
+  gap: 1.5rem;
 }
 
 .nav-btn {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  border: none;
-  font-size: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  border: none;
+  font-size: 1.2rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 
-.btn-prev {
-  background: #ffd9c8;
-  color: var(--secondary-eucalyptus);
-}
-
-.btn-next {
-  background: var(--secondary-eucalyptus);
-  color: white;
-}
-
-.progress-line {
-  width: 120px;
-  height: 3px;
-  background: #ddd;
-  margin: 0 auto;
-  border-radius: 10px;
-  position: relative;
-}
-
-.progress-fill {
-  height: 100%;
-  background: var(--secondary-eucalyptus);
-  width: 0%;
-  border-radius: 10px;
-  transition: width 0.3s;
-}
-
-.progress-text {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #444;
-}
-
-.deactivated {
+.nav-btn i {
   pointer-events: none;
-  opacity: 0.5;
+}
+
+.nav-btn:hover {
+  transform: scale(1.08);
+}
+
+.nav-btn:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.nav-btn:focus {
+  outline: 3px solid #89a6d8;
+  outline-offset: 3px;
+}
+
+.flashcard-progress {
+  width: 80%;
+  max-width: 500px;
+  height: 12px;
+  background-color: #e2e8f0;
+  border-radius: 6px;
+  margin: 1.5rem auto;
+  overflow: hidden;
+  display: block;
+}
+
+.flashcard-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: #E87722;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .flashcard-progress {
+    width: 90%;
+  }
 }
 
 /* scroll to top button */
@@ -862,29 +868,4 @@ html {
 summary h5 {
   margin: 0;
   display: inline;
-}
-
-/* Flashcards */
-.flashcard {
-  display: none;
-}
-
-.flashcard.active {
-  display: block;
-}
-
-.flashcard:focus {
-  outline: 3px solid var(--primary-blue);
-  outline-offset: 4px;
-}
-
-.nav-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
 }

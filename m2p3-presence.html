@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/css/coaching-essentials.css" />
 </head>
+<script type="text/javascript" src="//app.pageproofer.com/embed/1c225470-8886-5dc7-a2a6-6e33dbbf1cc7" async="true"></script>
 <body>
     <!-- NAVBAR -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" style="z-index: 2001; position: relative;">
@@ -91,29 +92,6 @@
                                 <p>In our busy world, presence and active listening have become challenging as we deal with more priorities and distractions. People are feeling <strong>disconnected</strong>.</p>
                                 <p>Think about a time when you felt that someone was present and really listened to you. What did that feel like? How did that impact your connection with that person?</p>
                                 <p>Our brains naturally reflect the emotions and actions around us. When we feel <strong>understood and valued</strong>, we mirror that back, which creates deeper connection and understanding with that person.</p>
-                                <div class="d-flex flex-column align-items-center py-4">
-                                    <div class="flashcard-container">
-                                        <span class="refresh-icon" id="flipIcon" data-toggle="tooltip" title="Click to flip" tabindex="0" role="button" aria-label="Flip flashcard"> &#x21bb; </span>
-                                        <div class="flip-card" id="flipCard" tabindex="0" role="button" aria-live="polite">
-                                            <div class="card-face card-front">
-                                                <span id="frontText"></span>
-                                            </div>
-                                            <div class="card-face card-back">
-                                                <span id="backText"></span>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center mt-4 px-3">
-                                            <button class="nav-btn btn-prev" tabindex="0" aria-label="Previous card"> &#10094; </button>
-                                            <div class="text-center">
-                                                <div class="progress-line">
-                                                    <div class="progress-fill" id="progressFill"></div>
-                                                </div>
-                                                <div class="progress-text" id="progressText">1 of 3</div>
-                                            </div>
-                                            <button class="nav-btn btn-next" tabindex="0" aria-label="Next card"> &#10095; </button>
-                                        </div>
-                                    </div>
-                                </div>
                             </section>
                         </div>
                     </div>
@@ -134,248 +112,37 @@
                         <i class="fas fa-chevron-up"></i>
                     </a>
                 </div>
-        </div>
-    </div>
-    </main>
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>const toTop = document.querySelector(".to-top");
+            </main>
+            <!-- Bootstrap core JavaScript -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+            <script>const toTop = document.querySelector(".to-top");
 
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 100) {
-                toTop.classList.add("active");
-            } else {
-                toTop.classList.remove("active");
-            }
-        })</script>
-    <!-- Scroll Button -->
-    <script>// Get the button
-        let mybutton = document.getElementById("myBtn");
+                window.addEventListener("scroll", () => {
+                    if (window.pageYOffset > 100) {
+                        toTop.classList.add("active");
+                    } else {
+                        toTop.classList.remove("active");
+                    }
+                })</script>
+            <!-- Scroll Button -->
+            <script>
+                let mybutton = document.getElementById("myBtn");
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () { scrollFunction() };
+                window.onscroll = function () { scrollFunction() };
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-        }
-    </script>
-    <!-- Flashcard Activity -->
-    <script>
-        // Initialize Bootstrap tooltip
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-
-        // -----------------------------
-        // CARD DATA
-        // -----------------------------
-        const cards = [
-            {
-                front: "Disconnected",
-                back: "Fractured relationships, feelings of isolation, decreased productivity, reduced engagement and feeling unfulfilled.  "
-            },
-            {
-                front: "Connected",
-                back: "Focused and effective conversations, increased engagement and productivity and feeling happy."
-            }
-        ];
-
-        let index = 0;
-
-        const flipCard = document.getElementById("flipCard");
-        const frontText = document.getElementById("frontText");
-        const backText = document.getElementById("backText");
-        const btnPrev = document.querySelector(".btn-prev");
-        const btnNext = document.querySelector(".btn-next");
-
-        // -----------------------------
-        // FLASHCARD CONTENT & PROGRESS
-        // -----------------------------
-        function updateFlashcard() {
-            frontText.textContent = cards[index].front;
-            backText.textContent = cards[index].back;
-
-            document.getElementById("progressText").textContent =
-                `${index + 1} of ${cards.length}`;
-
-            const percent = ((index + 1) / cards.length) * 100;
-            document.getElementById("progressFill").style.width = percent + "%";
-
-            // Reset flip
-            flipCard.classList.remove("flipped");
-
-            // Update button colors and state
-            updateButtonColors();
-            updateButtonState();
-
-            // Announce current card for screen readers
-            flipCard.setAttribute("aria-label", `Flashcard: ${cards[index].front}`);
-        }
-
-        // -----------------------------
-        // BUTTON COLORS
-        // -----------------------------
-        function updateButtonColors() {
-            // Slide 2 (index 1) specific colors
-            if (index === 1) {
-                btnNext.style.background = "#ffd9c8"; // light orange
-                btnNext.style.color = "#ff6f2c";
-
-                btnPrev.style.background = "#ff6f2c"; // dark orange
-                btnPrev.style.color = "white";
-            } else {
-                // Default
-                btnPrev.style.background = "#ffd9c8";
-                btnPrev.style.color = "#ff6f2c";
-
-                btnNext.style.background = "#ff6f2c";
-                btnNext.style.color = "white";
-            }
-        }
-
-        // -----------------------------
-        // BUTTON STATE (disable/enable)
-        // -----------------------------
-        function updateButtonState() {
-            // CSS class for disabled buttons
-            if (index === 0) {
-                btnPrev.classList.add("deactivated");
-            } else {
-                btnPrev.classList.remove("deactivated");
-            }
-
-            if (index === cards.length - 1) {
-                btnNext.classList.add("deactivated");
-            } else {
-                btnNext.classList.remove("deactivated");
-            }
-        }
-
-        // -----------------------------
-        // FLIP CARD FUNCTION
-        // -----------------------------
-        function flipNow() {
-            flipCard.classList.toggle("flipped");
-
-            const label = flipCard.classList.contains("flipped")
-                ? `Back of card: ${backText.textContent}`
-                : `Front of card: ${frontText.textContent}`;
-
-            flipCard.setAttribute("aria-label", label);
-        }
-
-        // -----------------------------
-        // EVENT LISTENERS
-        // -----------------------------
-        // Flip icon click/keyboard
-        document.getElementById("flipIcon").addEventListener("click", flipNow);
-        document.getElementById("flipIcon").addEventListener("keydown", function (event) {
-            if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                flipNow();
-            }
-        });
-
-        // Flip card click/keyboard
-        flipCard.addEventListener("click", flipNow);
-        flipCard.addEventListener("keydown", function (event) {
-            if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                flipNow();
-            }
-        });
-
-        // -----------------------------
-        // NAVIGATION BUTTONS
-        // -----------------------------
-        btnPrev.addEventListener("click", function (event) {
-            if (btnPrev.classList.contains("deactivated")) return;
-            index = (index - 1 + cards.length) % cards.length;
-            updateFlashcard();
-        });
-
-        btnNext.addEventListener("click", function (event) {
-            if (btnNext.classList.contains("deactivated")) return;
-            index = (index + 1) % cards.length;
-            updateFlashcard();
-        });
-
-        // -----------------------------
-        // KEYBOARD ARROWS
-        // -----------------------------
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "ArrowRight") {
-                if (!btnNext.classList.contains("deactivated")) {
-                    index = (index + 1) % cards.length;
-                    updateFlashcard();
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        mybutton.style.display = "block";
+                    } else {
+                        mybutton.style.display = "none";
+                    }
                 }
-            }
-            if (event.key === "ArrowLeft") {
-                if (!btnPrev.classList.contains("deactivated")) {
-                    index = (index - 1 + cards.length) % cards.length;
-                    updateFlashcard();
+
+                function topFunction() {
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
                 }
-            }
-        });
-
-        // -----------------------------
-        // MOBILE SWIPE SUPPORT
-        // -----------------------------
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        flipCard.addEventListener("touchstart", function (event) {
-            touchStartX = event.changedTouches[0].screenX;
-        }, false);
-
-        flipCard.addEventListener("touchend", function (event) {
-            touchEndX = event.changedTouches[0].screenX;
-            handleSwipeGesture();
-        }, false);
-
-        function handleSwipeGesture() {
-            const swipeDistance = touchEndX - touchStartX;
-            const threshold = 50;
-
-            if (Math.abs(swipeDistance) < threshold) return;
-
-            if (swipeDistance < 0 && !btnNext.classList.contains("deactivated")) {
-                index = (index + 1) % cards.length;
-            } else if (swipeDistance > 0 && !btnPrev.classList.contains("deactivated")) {
-                index = (index - 1 + cards.length) % cards.length;
-            }
-            updateFlashcard();
-        }
-
-        function flipNow() {
-            flipCard.classList.toggle("flipped");
-
-            // Rotate the flip icon along with the card
-            const flipIcon = document.getElementById("flipIcon");
-            flipIcon.style.transform = flipCard.classList.contains("flipped") ? "rotate(180deg)" : "rotate(0deg)";
-
-            // Update aria-label
-            const label = flipCard.classList.contains("flipped")
-                ? `Back of card: ${backText.textContent}`
-                : `Front of card: ${frontText.textContent}`;
-            flipCard.setAttribute("aria-label", label);
-        }
-
-        // -----------------------------
-        // INITIALIZE FIRST CARD
-        // -----------------------------
-        updateFlashcard();
-    </script>
+            </script>
 </body>
 </html>

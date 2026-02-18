@@ -6,11 +6,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <title>Coaching Essentials | Module 2 | Active Listening Activity</title>
+    <title>Coaching Essentials | Module 2 | Active Listening In Action</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/css/coaching-essentials.css" />
 </head>
+<script type="text/javascript" src="//app.pageproofer.com/embed/1c225470-8886-5dc7-a2a6-6e33dbbf1cc7" async="true"></script>
 <body>
     <!-- NAVBAR -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" style="z-index: 2001; position: relative;">
@@ -79,8 +80,37 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <section class="mb-5">
-                                <h2 class="pb-2">Active Listening Activity</h2>
-                                <p>Below are five elements that are key to creating connecting and understanding in conversations and how you can put them into action.</p>
+                                <h2 class="pb-2">Active Listening in Action</h2>
+                                <p class="pb-2">This video (8:08) shows a snippet of a real coaching session with a BC Public Service employee. What elements of active listening can you identify being demonstrated by the coach?</p>
+                                <div class="container mb-5">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8 pb-4">
+                                            <div class="video-wrapper">
+                                                <video id="video1" controls>
+                                                    <source src="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/media/active-listening.mp4" type="video/mp4">
+                                                    <track src="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/media/coaching-essentials-intro.vtt" kind="subtitles" srclang="en" label="English">
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <!-- TRANSCRIPT BUTTONS -->
+                                        <div class="text-center">
+                                            <a href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/documents/transcript-welcome.pdf" target="_blank" class="btn btn-outline-primary btn-lg mx-2 my-2" role="button">Transcript</a>
+                                            <a href="https://learn.bcpublicservice.gov.bc.ca/coaching-essentials/documents/transcript-welcome.docx" target="_blank" class="btn btn-outline-primary btn-lg mx-2 my-2" role="button"> Transcript</a>
+                                        </div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <div class="card knowledge">
+                                            <h4 class="card-header">Knowledge Check</h4>
+                                            <div class="card-body">
+                                                <p class="card-text medium"><i class="fa fa-info-circle mr-1" aria-hidden="true"></i>Answer the following 3 questions. Use the blue arrow below to move between questions. Scores shown aren't tracked or shared. They're for your learning only.</p>
+                                            </div>
+                                            <div class="py-2 px-4">
+                                                <div id="h5p-container"></div>
+                                                <script type="text/javascript" src="https://learn.bcpublicservice.gov.bc.ca/common-components/assets/h5p-player/dist/main.bundle.js" charset="UTF-8"></script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </section>
                             <!-- PAGE NAVIGATION -->
                             <div class="border-top pt-4 text-center">
@@ -115,10 +145,9 @@
                     }
                 })</script>
             <!-- Scroll Button -->
-            <script>// Get the button
+            <script>
                 let mybutton = document.getElementById("myBtn");
 
-                // When the user scrolls down 20px from the top of the document, show the button
                 window.onscroll = function () { scrollFunction() };
 
                 function scrollFunction() {
@@ -129,28 +158,24 @@
                     }
                 }
 
-                // When the user clicks on the button, scroll to the top of the document
                 function topFunction() {
                     document.body.scrollTop = 0; // For Safari
                     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-                }</script>
-            <!-- Bootstrap core JavaScript -->
+                }
+            </script>
+            <!-- H5P Activity -->
             <script>
-                $(document).ready(function () {
-                    // Expand All
-                    $("#expandAll").on("click", function () {
-                        $("#accordionExample .collapse").each(function () {
-                            $(this).collapse("show");
-                        });
-                    });
-
-                    // Collapse All
-                    $("#collapseAll").on("click", function () {
-                        $("#accordionExample .collapse.show").each(function () {
-                            $(this).collapse("hide");
-                        });
-                    });
+                document.addEventListener('DOMContentLoaded', function () {
+                    const el = document.getElementById('h5p-container');
+                    const options = {
+                        h5pJsonPath: 'h5p/coaching-essentials-m2-questions/', // Path to the extracted H5P content
+                        frameJs: 'https://learn.bcpublicservice.gov.bc.ca/common-components/assets/h5p-player/dist/frame.bundle.js', // Path to player's frame.bundle.js
+                        frameCss: 'https://learn.bcpublicservice.gov.bc.ca/common-components/assets/h5p-player/dist/styles/h5p.css', // Path to player's h5p.css
+                    };
+                    new H5PStandalone.H5P(el, options);
                 });
             </script>
+        </div>
+    </div>
 </body>
 </html>
